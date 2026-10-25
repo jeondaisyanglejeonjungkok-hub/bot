@@ -131,10 +131,19 @@ class BackgroundRemoverApp {
     if (this.processingThumb) {
       this.processingThumb.src = this.originalUrl;
     }
-    this.announce('Uploading image and removing background…');
+    this.announce('Removing background directly in your browser…');
+
+    const processingTitle = document.querySelector('.processing-title');
+    const processingSubtitle = document.querySelector('.processing-subtitle');
+    if (processingTitle) processingTitle.textContent = 'Removing background…';
+    if (processingSubtitle) processingSubtitle.textContent = 'Processing directly in your browser…';
 
     try {
-      const { blob, durationMs } = await ApiService.removeBackground(file);
+      const { blob, durationMs } = await ApiService.removeBackground(file, (statusMsg, pct) => {
+        if (processingSubtitle) {
+          processingSubtitle.textContent = statusMsg;
+        }
+      });
       this.processedBlob = blob;
       this.processedUrl = URL.createObjectURL(blob);
 

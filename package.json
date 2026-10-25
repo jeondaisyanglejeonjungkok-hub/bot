@@ -1,20 +1,17 @@
 {
-  "name": "ads-trafic-agent",
+  "name": "background-remover",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Instant client-side background remover utility running via WebAssembly in browser.",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "npx -y serve .",
+    "dev": "npx -y serve ."
   },
-  "keywords": [],
+  "keywords": [
+    "background-remover",
+    "webassembly",
+    "client-side",
+    "utility"
+  ],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^18.0.9",
-    "express": "^5.3.0",
-    "multer": "^2.5.0"
-  }
+  "license": "MIT"
 }
