@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+
+# Python cache & models
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# System and logs
+*.log
+.DS_Store
+Thumbs.db
